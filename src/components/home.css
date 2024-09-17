@@ -1,41 +1,76 @@
 /* src/components/Home.css */
-.home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+.home-section {
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0d0d0d; /* Dark background */
+    position: relative;
+    color: #fff; /* White text for contrast */
+  }
+  
+  .home-container {
     text-align: center;
-    background-color: #f5f5f5;
+    z-index: 1; /* Keep the text above the background effect */
   }
   
-  .home h1 {
-    font-size: 3rem;
-    color: #333;
-  }
-  
-  .home p {
-    font-size: 1.5rem;
-    margin-top: 20px;
-    color: #666;
-  }
-  
-  .home-links {
-    margin-top: 40px;
-  }
-  
-  .home-links .btn {
-    display: inline-block;
-    margin: 0 10px;
-    padding: 10px 20px;
-    background-color: #007BFF;
+  .home-title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
     color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
   }
   
-  .home-links .btn:hover {
-    background-color: #0056b3;
+  .highlighted-text {
+    color: #ff4b4b; /* Red accent color for name */
   }
+  
+  .home-subtitle {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+  }
+  
+  .cta-buttons .btn {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border: 2px solid #ff4b4b;
+    background-color: transparent;
+    color: #ff4b4b;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .cta-buttons .btn:hover {
+    background-color: #ff4b4b;
+    color: #fff;
+  }
+  
+  .arrow {
+    margin-left: 0.5rem;
+  }
+
+  /* src/components/Home.css */
+
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Behind the text */
+  }
+  
+  .home-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0d0d0d; /* Dark background */
+    position: relative;
+    color: #fff; /* White text for contrast */
+    overflow: hidden;
+  }
+  
+  /* The rest of the styles... */
   
