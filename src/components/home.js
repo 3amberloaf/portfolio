@@ -2,67 +2,95 @@
 
 import React from 'react';
 import './Home.css'; // Import custom CSS for styling
-import { useCallback } from "react";
-import Particles from "@tsparticles/react";
-import { tsParticles } from "@tsparticles/engine";
+import { useEffect } from "react";
 
 
-
+import '../App.css';
 
 const Home = () => {
-    const particlesInit = useCallback(async (engine) => {
-        // Load tsparticles engine
-        await tsParticles.load(engine);
-      }, []);
-      
-
-  const particlesOptions = {
-    fullScreen: { enable: false },
-    background: { color: "#0d0d0d" },
-    particles: {
-      number: {
-        value: 50,
-        density: {
-          enable: true,
-          value_area: 800
-        }
-      },
-      color: { value: "#fff" },
-      shape: {
-        type: "circle",
-        stroke: { width: 10, color: "#000000" },
-      },
-      opacity: { value: 0.5, random: false },
-      size: { value: 3, random: true },
-      line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
-      move: {
-        enable: true,
-        speed: 6,
-        direction: "none",
-        random: false,
-        straight: false,
-        out_mode: "out",
-        attract: { enable: false }
+    useEffect(() => {
+      const profile = document.querySelector('.profile');
+      const skills = document.querySelectorAll('.skills__item');
+  
+      // Animate profile
+      if (profile) {
+        profile.classList.add('profile__fade-in');
       }
-    }
-  };
-
-  return (
-    <section className="home-section" id="home">
-       <Particles id="tsparticles" init={particlesInit} options={particlesOptions} />
-      <div className="home-container">
-        <h1 className="home-title">
-          Hello, I'm <span className="highlighted-text">Amber</span>.
-        </h1>
-        <p className="home-subtitle">I'm a full stack web developer.</p>
-        <div className="cta-buttons">
-          <a href="#projects" className="btn btn-primary">
-            View my work <span className="arrow">↓</span>
-          </a>
+  
+      // Animate skills with fade-in effect
+      if (skills) {
+        skills.forEach((skill, index) => {
+          setTimeout(() => {
+            skill.classList.add('skills__item-fade-in');
+          }, index * 200);
+        });
+      }
+    }, []);
+  
+    return (
+      <div className="hero">
+        <div className="canvas">
+          {/* Add canvas animation here if you want, or particles.js, etc. */}
         </div>
+        <div className="heading">
+          <h1 className="heading__line-1">
+            Welcome to <span>Amber's</span> Portfolio
+          </h1>
+          <h2 className="heading__line-2">Full-Stack Developer</h2>
+          <div className="heading-cta">
+            Explore Projects
+            <svg className="heading__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 4l1.41 1.41L8.83 10h10.34v2H8.83l4.58 4.59L12 20l-8-8z" />
+            </svg>
+          </div>
+        </div>
+        <section className="about">
+          <h2 className="about__heading">About Me</h2>
+          <div className="about__content">
+            <div className="profile">
+              <div className="profile__picture">
+                <img src="profile-pic.jpg" alt="Amber" />
+              </div>
+              <p className="profile__blurb">
+                Hi, I'm Amber, a passionate full-stack developer with experience in creating responsive and visually
+                appealing websites.
+              </p>
+            </div>
+            <div className="skills">
+              <div className="skills__row">
+                <div className="skills__item skills__item--js">
+                  <img src="path/to/js-logo.png" alt="JavaScript" />
+                  <span className="skills__item-name">JavaScript</span>
+                </div>
+                <div className="skills__item skills__item--react">
+                  <img src="path/to/react-logo.png" alt="React" />
+                  <span className="skills__item-name">React</span>
+                </div>
+              </div>
+              <div className="skills__row">
+                <div className="skills__item skills__item--node">
+                  <img src="path/to/node-logo.png" alt="Node.js" />
+                  <span className="skills__item-name">Node.js</span>
+                </div>
+                <div className="skills__item skills__item--webpack">
+                  <img src="path/to/webpack-logo.png" alt="Webpack" />
+                  <span className="skills__item-name">Webpack</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="contact">
+          <h2 className="contact__heading">Get In Touch</h2>
+          <form className="contact__form">
+            <input type="text" className="contact__form-name" placeholder="Your Name" />
+            <input type="email" className="contact__form-email" placeholder="Your Email" />
+            <textarea className="contact__form-message" placeholder="Your Message"></textarea>
+            <button className="contact__form-submit">Send</button>
+          </form>
+        </section>
       </div>
-    </section>
-  );
-};
-
-export default Home;
+    );
+  };
+  
+  export default Home;
