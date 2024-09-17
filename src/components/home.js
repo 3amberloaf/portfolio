@@ -1,38 +1,53 @@
-import React from 'react';
-import './Home.css'; // Import custom CSS for styling
-import { useCallback } from "react";
-import Particles from "@tsparticles/react";
-import { tsParticles } from "@tsparticles/engine";
+import React, { useCallback } from "react";
+import Particles from "react-tsparticles";
 
-
-
+import { loadAll } from "@tsparticles/all"; // Adjusted for JavaScript (no type import)
+import './home.css'; // Your custom CSS
 
 const Home = () => {
-    const particlesInit = useCallback(async (engine) => {
-        // Load tsparticles engine
-        await tsParticles.load(engine);
-      }, []);
-      
+  // Particle initialization using useCallback
+  const customInit = useCallback(async (engine) => {
+    await loadAll(engine); // Loads all tsParticles features
+  }, []);
 
-  const particlesOptions = {
-    fullScreen: { enable: false },
-    background: { color: "#0d0d0d" },
+  // Custom particle options
+  const particleOptions = {
+    fullScreen: {
+      enable: false,
+    },
     particles: {
       number: {
         value: 50,
         density: {
           enable: true,
-          value_area: 800
-        }
+          value_area: 800,
+        },
       },
-      color: { value: "#fff" },
+      color: {
+        value: "#fff",
+      },
       shape: {
         type: "circle",
-        stroke: { width: 0, color: "#000000" },
+        stroke: {
+          width: 0,
+          color: "#000000",
+        },
       },
-      opacity: { value: 0.5, random: false },
-      size: { value: 3, random: true },
-      line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+      opacity: {
+        value: 0.5,
+        random: false,
+      },
+      size: {
+        value: 3,
+        random: true,
+      },
+      line_linked: {
+        enable: true,
+        distance: 150,
+        color: "#ffffff",
+        opacity: 0.4,
+        width: 1,
+      },
       move: {
         enable: true,
         speed: 6,
@@ -40,14 +55,19 @@ const Home = () => {
         random: false,
         straight: false,
         out_mode: "out",
-        attract: { enable: false }
-      }
-    }
+        attract: {
+          enable: false,
+        },
+      },
+    },
+    background: {
+      color: "#0d0d0d", // Background color matching your theme
+    },
   };
 
   return (
     <section className="home-section" id="home">
-       <Particles id="tsparticles" init={particlesInit} options={particlesOptions} />
+      <Particles options={particleOptions} init={customInit} />
       <div className="home-container">
         <h1 className="home-title">
           Hello, I'm <span className="highlighted-text">Amber</span>.
