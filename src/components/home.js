@@ -1,5 +1,3 @@
-// src/components/Home.js
-
 import React from 'react';
 import './Home.css'; // Import custom CSS for styling
 import { useCallback } from "react";
