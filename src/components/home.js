@@ -1,83 +1,81 @@
-import React, { useCallback } from "react";
-import Particles from "react-tsparticles";
-
-import { loadAll } from "@tsparticles/all"; // Adjusted for JavaScript (no type import)
+import React from "react";
+import { motion } from "framer-motion";
+import Lottie from 'react-lottie';
+import flowerAnimationData from '../assets/chick.json'; // Your Lottie animation file
 import './home.css'; // Your custom CSS
 
 const Home = () => {
-  // Particle initialization using useCallback
-  const customInit = useCallback(async (engine) => {
-    await loadAll(engine); // Loads all tsParticles features
-  }, []);
+  // Framer Motion variants for text and button animations
+  const textVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeInOut",
+      },
+    },
+  };
 
-  // Custom particle options
-  const particleOptions = {
-    fullScreen: {
-      enable: false,
-    },
-    particles: {
-      number: {
-        value: 50,
-        density: {
-          enable: true,
-          value_area: 800,
-        },
-      },
-      color: {
-        value: "#fff",
-      },
-      shape: {
-        type: "circle",
-        stroke: {
-          width: 0,
-          color: "#000000",
-        },
-      },
-      opacity: {
-        value: 0.5,
-        random: false,
-      },
-      size: {
-        value: 3,
-        random: true,
-      },
-      line_linked: {
-        enable: true,
-        distance: 150,
-        color: "#ffffff",
-        opacity: 0.4,
-        width: 1,
-      },
-      move: {
-        enable: true,
-        speed: 6,
-        direction: "none",
-        random: false,
-        straight: false,
-        out_mode: "out",
-        attract: {
-          enable: false,
-        },
+  const buttonVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        delay: 0.5,
+        ease: "easeInOut",
       },
     },
-    background: {
-      color: "#0d0d0d", // Background color matching your theme
+  };
+
+  // Lottie options for flower animation
+  const lottieOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: flowerAnimationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
     },
   };
 
   return (
     <section className="home-section" id="home">
-      <Particles options={particleOptions} init={customInit} />
+      {/* Lottie Animation for Flower Blooming */}
+      <div className="lottie-container">
+        <Lottie options={lottieOptions} height={300} width={300} />
+      </div>
+
+      {/* Text animations using Framer Motion */}
       <div className="home-container">
-        <h1 className="home-title">
+        <motion.h1
+          className="home-title"
+          variants={textVariants}
+          initial="hidden"
+          animate="visible"
+        >
           Hello, I'm <span className="highlighted-text">Amber</span>.
-        </h1>
-        <p className="home-subtitle">I'm a full stack web developer.</p>
-        <div className="cta-buttons">
+        </motion.h1>
+        <motion.p
+          className="home-subtitle"
+          variants={textVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          I'm a full stack web developer.
+        </motion.p>
+        <motion.div
+          className="cta-buttons"
+          variants={buttonVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <a href="#projects" className="btn btn-primary">
             View my work <span className="arrow">↓</span>
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
