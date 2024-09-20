@@ -1,48 +1,45 @@
-.lottie-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
-  }
-  
-  .home-container {
-    text-align: center;
-    z-index: 2;
-  }
-  
-  .home-title {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-    color: #509677;
-  }
-  
-  .highlighted-text {
-    color: #ff4b4b;
-  }
-  
-  .home-subtitle {
-    font-size: 1.75rem;
-    margin-bottom: 2rem;
-    color: #ffffff;
-  }
-  
-  .cta-buttons .btn {
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    border: 2px solid #ff4b4b;
-    background-color: transparent;
-    color: #ff4b4b;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .cta-buttons .btn:hover {
-    background-color: #ff4b4b;
-    color: #fff;
-  }
-  
-  .arrow {
-    margin-left: 0.5rem;
-  }
-  
+html, body {
+  background-color: rgb(235, 234, 226);
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#particle-slider {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 2; /* ParticleSlider is above the button */
+  pointer-events: none; /* Prevent ParticleSlider from blocking interaction */
+}
+
+.draw {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 2; /* Canvas is above the button */
+  pointer-events: none; /* Ensure it doesn't block button interactions */
+}
+
+/* Styling for the button */
+.home-container {
+  position: relative;
+  z-index: 1; /* Button is under the ParticleSlider */
+}
+
+.btn {
+  position: relative;
+  z-index: 3; /* Ensure the button is interactable */
+  pointer-events: auto; /* Allow interaction on the button */
+}
+
+.btn-primary {
+  z-index: 3; /* Keep button interactable */
+}
+
