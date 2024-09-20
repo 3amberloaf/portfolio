@@ -1,0 +1,34 @@
+/* Full-screen container to resemble a computer screen */
+.terminal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #0d0d0d; /* Dark background like a terminal */
+    color: #33ff33; /* Green text for that classic terminal look */
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font for a code-like appearance */
+    font-size: 48px; /* Increase font size for visibility */
+    line-height: 1.6;
+  }
+  
+  /* Container for the typing text */
+  .terminal-text {
+    display: inline-block;
+    white-space: pre; /* Preserve whitespace, important for code-like formatting */
+    font-weight: bold;
+  }
+  
+  /* Blinking cursor */
+  .cursor {
+    display: inline-block;
+    width: 10px;
+    background-color: #33ff33;
+    margin-left: 2px;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .cursor.blinking {
+    opacity: 0; /* The cursor disappears and reappears, creating the blinking effect */
+  }
+  

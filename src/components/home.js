@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import './home.css'; // Your custom CSS
+import PixelEffect from "./pixel";
 
 
 
@@ -17,7 +18,7 @@ const Home = () => {
   return (
     <section className="home-section" id="home">
       {/* Particle Slider background */}
- 
+ <PixelEffect>
 
       {/* Text animations using Framer Motion */}
       <div className="home-container">
@@ -31,7 +32,9 @@ const Home = () => {
             View my work <span className="arrow">↓</span>
           </a>
         </motion.div>
+
       </div>
+      </PixelEffect>
     </section>
   );
 };
