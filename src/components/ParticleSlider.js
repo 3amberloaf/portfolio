@@ -1,86 +1,69 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
-const ParticleSlider = () => {
+const ParticleSliderComponent = () => {
+
   useEffect(() => {
-    let retryAttempts = 0;
-
-    const image = new Image();
-    image.src = '/images/star.jpg';  // Correct image path
-    image.onload = () => {
-      console.log("Image loaded successfully.");
-      initParticleSlider(); // Only initialize after the image has fully loaded
-    };
-
     const initParticleSlider = () => {
-      const sliderElement = document.getElementById('particle-slider');
+      // Detect mobile devices and smaller screens
+      const isMobile = navigator.userAgent.toLowerCase().indexOf('mobile') >= 0;
+      const isSmall = window.innerWidth < 1000;
 
-      if (sliderElement && window.ParticleSlider) {
-        const isMobile = navigator.userAgent.toLowerCase().indexOf('mobile') >= 0;
-        const isSmall = window.innerWidth < 1000;
+      // Function to initialize the ParticleSlider
+      const init = () => {
+        const ps = new window.ParticleSlider({
+          ptlGap: isMobile || isSmall ? 3 : 0,
+          ptlSize: isMobile || isSmall ? 3 : 1,
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
 
-        try {
-          // Ensure the canvas has a valid size
-          const canvas = document.querySelector('.draw');
-          if (canvas) {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-          }
+        ps.init();
 
-          // Initialize ParticleSlider with options
-          const ps = new window.ParticleSlider({
-            ptlGap: isMobile || isSmall ? 3 : 0,
-            ptlSize: isMobile || isSmall ? 3 : 1,
-            width: window.innerWidth, // Set width to window width
-            height: window.innerHeight, // Set height to window height
-            monochrome: true,
-          });
+        // Initialize dat.GUI for controlling ParticleSlider properties
+        const gui = new window.dat.GUI();
+        gui.add(ps, 'ptlGap').min(0).max(5).step(1).onChange(() => {
+          ps.init(true);
+        });
+        gui.add(ps, 'ptlSize').min(1).max(5).step(1).onChange(() => {
+          ps.init(true);
+        });
+        gui.add(ps, 'restless');
+        gui.addColor(ps, 'color').onChange((value) => {
+          ps.monochrome = true;
+          ps.setColor(value);
+          ps.init(true);
+        });
 
-          ps.setText(["Amber", "Sautner"]);
-          ps.init();
-        } catch (error) {
-          console.error("Failed to initialize ParticleSlider:", error);
-        }
-      } else if (retryAttempts < 5) {
-        retryAttempts += 1;
-        setTimeout(initParticleSlider, 100);
-      } else {
-        console.error("ParticleSlider element or script not available after multiple attempts.");
-      }
+        // Reinitialize the slider on window click
+        window.addEventListener('click', () => ps.init(true));
+      };
+
+      // Load the ParticleSlider script dynamically
+      const psScript = document.createElement('script');
+      psScript.src = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/23500/ps-0.9.js';
+      psScript.setAttribute('type', 'text/javascript');
+      psScript.onload = init;
+      document.body.appendChild(psScript);
     };
 
-    // Dynamically load the ParticleSlider script
-    const psScript = document.createElement('script');
-    psScript.src = './scripts/ps-0.9.js'; // Local path to ParticleSlider script
-    psScript.setAttribute('type', 'text/javascript');
+    // Initialize ParticleSlider when the component mounts
+    initParticleSlider();
 
-    // Load dat.gui script for controls if needed
-    const datGuiScript = document.createElement('script');
-    datGuiScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js';
-    datGuiScript.setAttribute('type', 'text/javascript');
-
-    // Initialize the ParticleSlider after both scripts are loaded
-    psScript.onload = () => setTimeout(initParticleSlider, 100);
-    document.body.appendChild(psScript);
-    document.body.appendChild(datGuiScript);
-
-    // Cleanup the scripts when component unmounts
+    // Clean up event listeners and script tags when the component unmounts
     return () => {
-      document.body.removeChild(psScript);
-      document.body.removeChild(datGuiScript);
+      const psScript = document.querySelector(`script[src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/23500/ps-0.9.js']`);
+      if (psScript) {
+        document.body.removeChild(psScript);
+      }
+      window.removeEventListener('click', () => {});
     };
   }, []);
 
   return (
-    <div id="particle-slider" style={{ width: "100%", height: "100vh" }}>
-      {/* ParticleSlider will render here */}
-      <div className="slides">
-        <div id="first-slide" className="slide" data-src="/images/star.jpg">
-          {/* Image for ParticleSlider */}
-        </div>
-      </div>
-      <canvas className="draw"></canvas>
+    <div id="particle-slider" style={{ width: '100%', height: '100vh', position: 'relative' }}>
+      <canvas className="draw" style={{ position: 'absolute', top: 0, left: 0 }}></canvas>
     </div>
   );
 };
 
-export default ParticleSlider;
+export default ParticleSliderComponent;
