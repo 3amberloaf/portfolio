@@ -61,7 +61,7 @@ const Home = () => {
           initial="hidden"
           animate="visible"
         >
-          <a href="#projects" className="btn btn-primary">
+          <a href="projects" className="btn btn-primary">
             View my work <span className="arrow">↓</span>
           </a>
         </motion.div>
