@@ -1,8 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Lottie from 'react-lottie';
-import flowerAnimationData from '../assets/chick.json'; // Your Lottie animation file
 import './home.css'; // Your custom CSS
+import BackgroundDots from "./backgrounddot";
 
 const Home = () => {
   // Framer Motion variants for text and button animations
@@ -31,22 +30,12 @@ const Home = () => {
     },
   };
 
-  // Lottie options for flower animation
-  const lottieOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: flowerAnimationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
 
   return (
     <section className="home-section" id="home">
-      {/* Lottie Animation for Flower Blooming */}
-      <div className="lottie-container">
-        <Lottie options={lottieOptions} height={300} width={300} />
-      </div>
+      {/* Background dots animation */}
+      <BackgroundDots />
+
 
       {/* Text animations using Framer Motion */}
       <div className="home-container">
