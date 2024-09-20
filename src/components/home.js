@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import './home.css'; // Your custom CSS
-import ParticleSlider from "./ParticleSlider";
+
+
 
 const Home = () => {
   const buttonVariants = {
@@ -16,7 +17,7 @@ const Home = () => {
   return (
     <section className="home-section" id="home">
       {/* Particle Slider background */}
-      <ParticleSlider />
+ 
 
       {/* Text animations using Framer Motion */}
       <div className="home-container">
