@@ -3,7 +3,7 @@
 Welcome to my personal portfolio! This website showcases my skills, projects, and experiences as a **Full-Stack Developer** and **Data Science Enthusiast**. The portfolio is built with **React** and deployed using **Netlify**.
 
 ## Live Demo
-[View Portfolio](https://your-portfolio-link.com)
+[View Portfolio](https://ambersautnerportfolio.netlify.app/)
 
 ---
 
@@ -35,49 +35,45 @@ Welcome to my personal portfolio! This website showcases my skills, projects, an
 
 ## Projects
 
-### 1. **Incident Management System**
+### 1. **Restart Drip Website**
+- **Description**: A fully responsive website built for Restart Drip, a hydration and IV drip service provider. The website focuses on user experience and integrates branding elements to align with the company's vision.
+- **Tech Stack**: HTML5, CSS3, JavaScript
+- **Live Site**: [Restart Drip](https://www.restartdrip.com)
+- **Repository**: (Private Repository)
+
+### 2. **Incident Management System**
 - **Description**: A full-stack web application that tracks IT incidents, assigns them to responsible teams, and records resolutions. Includes role-based access control and audit logs.
 - **Tech Stack**: Spring Boot (Backend), React.js (Frontend), MySQL (Database)
 - **Repository**: [Incident Management System](https://github.com/3amberloaf/incident-management-system)
 
-### 2. **Pandas Data Analysis Project**
+### 3. **Pandas Data Analysis Project**
 - **Description**: This project demonstrates various data analysis techniques using Pandas for data manipulation and visualization.
 - **Tech Stack**: Python, Pandas, Matplotlib
 - **Repository**: [Pandas Project](https://github.com/3amberloaf/Pandas.git)
 
-### 3. **Decision Tree & Random Forest Research Paper**
+### 4. **Decision Tree & Random Forest Research Paper**
 - **Description**: A comprehensive research project that explores the applications of decision trees and random forests in predictive modeling.
 - **Repository**: [Decision Trees & Random Forest](https://github.com/3amberloaf/DecisionTree-RandomForest)
 
-### 4. **Deep Ensemble Model for DR**
+### 5. **Deep Ensemble Model for DR**
 - **Description**: A deep learning-based model for dynamic risk prediction, using ensemble techniques to enhance accuracy.
 - **Repository**: [Deep Ensemble Model](https://github.com/3amberloaf/DeepEnsembleModel-DR)
 
-### 5. **Weather App**
+### 6. **Weather App**
 - **Description**: A weather application that displays current weather conditions for a user’s location, utilizing a third-party API to fetch real-time weather data.
 - **Tech Stack**: React, OpenWeatherMap API
 - **Repository**: [Weather App](https://github.com/3amberloaf/weather-app)
 
-### 6. **Portfolio Website**
+### 7. **Portfolio Website**
 - **Description**: The code for this very portfolio website, showcasing my projects and skills.
 - **Tech Stack**: React, Netlify
 - **Repository**: [Portfolio Website](https://github.com/3amberloaf/portfolio-website)
-
-### 7. **Tic-Tac-Toe Game**
-- **Description**: A simple Tic-Tac-Toe game that can be played in the browser. It includes features like tracking the score, resetting the game, and a responsive design.
-- **Tech Stack**: HTML, CSS, JavaScript
-- **Repository**: [Tic-Tac-Toe Game](https://github.com/3amberloaf/tic-tac-toe)
-
-### 8. **To-Do List App**
-- **Description**: A task management app that allows users to add, edit, and delete tasks. The app also provides options for task prioritization and completion status.
-- **Tech Stack**: JavaScript, HTML, CSS
-- **Repository**: [To-Do List App](https://github.com/3amberloaf/to-do-list)
 
 ---
 
 ## Contact
 
-- **Email**: amber.sautner@example.com
+- **Email**: ambersautner3@yahoo.com
 - **LinkedIn**: [Amber Sautner](https://www.linkedin.com/in/amber-sautner)
 - **GitHub**: [3amberloaf](https://github.com/3amberloaf)
 
