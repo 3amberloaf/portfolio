@@ -52,7 +52,7 @@ const PixelEffect = () => {
 
     const movePixels = () => {
       ctx.clearRect(0, 0, width, height); // Clear canvas
-      ctx.font = `${fontSize}px Arial`;
+      ctx.font = `${fontSize}px Montserrant`;
 
       pixels.forEach((pixel) => {
         const dx = pixel.x - mouseX;
