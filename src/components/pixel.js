@@ -104,7 +104,9 @@ const PixelEffect = () => {
 
   return (
     <div className="pixel-effect-container">
+      {/* The pixel canvas */}
       <canvas ref={canvasRef} className="pixel-canvas" />
+
     </div>
   );
 };
