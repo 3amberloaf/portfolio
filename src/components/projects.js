@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import BackgroundSlider from 'react-background-slider';
 import './projects.css'; // Custom styles for this component
 
 const projects = [
@@ -7,7 +6,7 @@ const projects = [
     title: "Restart Drip Website",
     description: "A fully responsive website built for Restart Drip, a hydration and IV drip service provider.",
     tools: "HTML5, CSS3, JavaScript",
-    image: "https://via.placeholder.com/1200x800?text=Restart+Drip+Website", // Replace with actual screenshot
+    image: "././images/restartdrip.png", // Replace with actual screenshot
     liveDemo: "https://www.restartdrip.com",
     repo: "Private Repository",
   },
@@ -47,38 +46,37 @@ const Projects = () => {
 
   return (
     <div className="projects-section">
-      {/* Background Slider */}
-      <BackgroundSlider
-        images={projects.map(project => project.image)} // Background images for each project
-        duration={5} // Duration of each slide
-        transition={1} // Transition duration between slides
-        currentIndex={currentProjectIndex} // Show the current project’s background
-      />
-
-      {/* Project Info */}
-      <div className="project-info">
-        <h2>{currentProject.title}</h2>
-        <p>{currentProject.description}</p>
-        <p><strong>Tools:</strong> {currentProject.tools}</p>
-
-        {/* Project Links */}
-        <div className="project-links">
-          {currentProject.liveDemo !== "#" && (
-            <a href={currentProject.liveDemo} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-              Live Demo
-            </a>
-          )}
-          {currentProject.repo !== "Private Repository" && (
-            <a href={currentProject.repo} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-              View Repository
-            </a>
-          )}
+      <div className="project-container">
+        {/* Image on the left */}
+        <div className="project-image-container">
+          <img src={currentProject.image} alt={currentProject.title} className="project-image" />
         </div>
 
-        {/* Navigation buttons */}
-        <div className="slider-controls">
-          <button onClick={prevProject} className="btn btn-prev">Previous</button>
-          <button onClick={nextProject} className="btn btn-next">Next</button>
+        {/* Info on the right */}
+        <div className="project-info-container">
+          <h2>{currentProject.title}</h2>
+          <p>{currentProject.description}</p>
+          <p><strong>Tools:</strong> {currentProject.tools}</p>
+
+          {/* Project Links */}
+          <div className="project-links">
+            {currentProject.liveDemo !== "#" && (
+              <a href={currentProject.liveDemo} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                Live Demo
+              </a>
+            )}
+            {currentProject.repo !== "Private Repository" && (
+              <a href={currentProject.repo} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+                View Repository
+              </a>
+            )}
+          </div>
+
+          {/* Navigation buttons */}
+          <div className="slider-controls">
+            <button onClick={prevProject} className="btn btn-prev">Previous</button>
+            <button onClick={nextProject} className="btn btn-next">Next</button>
+          </div>
         </div>
       </div>
     </div>

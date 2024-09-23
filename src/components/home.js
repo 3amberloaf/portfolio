@@ -1,11 +1,12 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import './home.css'; // Your custom CSS
-import PixelEffect from "./pixel";
-import Confetti from 'react-confetti';
-import Projects from "./projects";
+import './home.css'; // Importing your custom CSS
+import PixelEffect from "./pixel"; // Assuming PixelEffect is your custom component
+import Confetti from 'react-confetti'; // Confetti effect
+import Projects from "./projects"; // Projects component
 
 const Home = () => {
+  // Motion variants for the button animation
   const buttonVariants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
@@ -15,11 +16,12 @@ const Home = () => {
     },
   };
 
-  const ConfettiBackground = () => {
-    return <Confetti width={window.innerWidth} height={window.innerHeight} />;
-  };
+  // Confetti background component
+  const ConfettiBackground = () => (
+    <Confetti width={window.innerWidth} height={window.innerHeight} />
+  );
 
-  // Ref for the projects section
+  // Reference to the projects section for smooth scrolling
   const projectsRef = useRef(null);
 
   // Function to scroll to the projects section
@@ -29,24 +31,29 @@ const Home = () => {
 
   return (
     <section className="home-section" id="home">
+      {/* Confetti background */}
       <ConfettiBackground />
+      {/* PixelEffect if you want additional animation effects */}
       <PixelEffect />
 
-      {/* Button and other elements */}
+      {/* Button for scrolling to the Projects section */}
       <div className="home-container">
-        <motion.div className="cta-buttons" variants={buttonVariants} initial="hidden" animate="visible">
-          {/* When clicked, it will trigger scrollToProjects */}
+        <motion.div
+          className="cta-buttons"
+          variants={buttonVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <button onClick={scrollToProjects} className="btn btn-primary">
             View my work <span className="arrow">↓</span>
           </button>
         </motion.div>
       </div>
 
-      {/* Projects section to scroll to */}
+      {/* Projects section */}
       <section ref={projectsRef} id="projects">
         <h1>Projects</h1>
-    < Projects />
-        
+        <Projects />
       </section>
     </section>
   );

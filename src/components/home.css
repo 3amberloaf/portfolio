@@ -4,14 +4,20 @@ html, body {
   height: 100%;
   margin: 0;
   scroll-behavior: smooth;
-  
   padding: 0;
-
+  font-family: 'Montserrat', sans-serif; 
 }
 
 .home-container {
   margin: 0;
   padding: 0;
+
+  position: relative;
+  z-index: 2; /* Ensure the button container is above the canvas */
+
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
 }
 
 
@@ -35,10 +41,7 @@ canvas {
 
 
 
-.home-container {
-  position: relative;
-  z-index: 2; /* Ensure the button container is above the canvas */
-}
+
 .btn-primary {
   background-color: transparent; /* No background fill */
   color: #ff5e5e; /* Red text, adjust based on the image color */
@@ -72,31 +75,11 @@ canvas {
 }
 
 #projects {
-  padding-top: 100px; /* Adjust this value to control the space */
+  padding-top: 6rem; /* Adds appropriate spacing above the projects */
 }
 
-.project-item {
-  margin: 20px 0;
-  padding: 20px;
-  background: #f4f4f4;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.btn-primary:active {
+  background-color: #ff4d4d; /* Slightly darker background on click */
+  border-color: #ff4d4d;
 }
 
-.project-item h2 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-.project-item p {
-  margin: 10px 0;
-}
-
-.project-item a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.project-item a:hover {
-  text-decoration: underline;
-}
