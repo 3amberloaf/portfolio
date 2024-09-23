@@ -1,9 +1,9 @@
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import './home.css'; // Your custom CSS
 import PixelEffect from "./pixel";
 import Confetti from 'react-confetti';
-
+import Projects from "./projects";
 
 const Home = () => {
   const buttonVariants = {
@@ -19,16 +19,16 @@ const Home = () => {
     return <Confetti width={window.innerWidth} height={window.innerHeight} />;
   };
 
+  // Ref for the projects section
   const projectsRef = useRef(null);
 
+  // Function to scroll to the projects section
   const scrollToProjects = () => {
     projectsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
-  
 
   return (
     <section className="home-section" id="home">
-    
       <ConfettiBackground />
       <PixelEffect />
 
@@ -44,8 +44,9 @@ const Home = () => {
 
       {/* Projects section to scroll to */}
       <section ref={projectsRef} id="projects">
-        <h2>My Projects</h2>
-        {/* Your projects content here */}
+        <h1>Projects</h1>
+    < Projects />
+        
       </section>
     </section>
   );

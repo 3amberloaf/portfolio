@@ -74,3 +74,29 @@ canvas {
 #projects {
   padding-top: 100px; /* Adjust this value to control the space */
 }
+
+.project-item {
+  margin: 20px 0;
+  padding: 20px;
+  background: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-item h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.project-item p {
+  margin: 10px 0;
+}
+
+.project-item a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.project-item a:hover {
+  text-decoration: underline;
+}
