@@ -3,10 +3,10 @@ html, body {
   width: 100%;
   height: 100%;
   margin: 0;
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
   
   padding: 0;
-  overflow: hidden;
+
 }
 
 .home-container {
@@ -69,4 +69,8 @@ canvas {
   font-size: 20px; /* Adjust size of the arrow */
   margin-left: 10px;
   color: inherit; /* Ensure it matches the text color */
+}
+
+#projects {
+  padding-top: 100px; /* Adjust this value to control the space */
 }

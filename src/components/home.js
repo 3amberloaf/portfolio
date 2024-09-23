@@ -21,10 +21,10 @@ const Home = () => {
 
   const projectsRef = useRef(null);
 
-  // Function to scroll to the projects section
   const scrollToProjects = () => {
-    projectsRef.current.scrollIntoView({ behavior: "smooth" });
+    projectsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
+  
 
   return (
     <section className="home-section" id="home">
