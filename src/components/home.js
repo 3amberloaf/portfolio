@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import { motion } from "framer-motion";
 import './home.css'; // Your custom CSS
 import PixelEffect from "./pixel";
@@ -19,22 +19,34 @@ const Home = () => {
     return <Confetti width={window.innerWidth} height={window.innerHeight} />;
   };
 
+  const projectsRef = useRef(null);
+
+  // Function to scroll to the projects section
+  const scrollToProjects = () => {
+    projectsRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="home-section" id="home">
-      {/* Confetti Background */}
+    
       <ConfettiBackground />
-    
-      {/* Pixel Effect in its own container */}
       <PixelEffect />
-    
+
       {/* Button and other elements */}
       <div className="home-container">
         <motion.div className="cta-buttons" variants={buttonVariants} initial="hidden" animate="visible">
-          <a href="#projects" className="btn btn-primary">
+          {/* When clicked, it will trigger scrollToProjects */}
+          <button onClick={scrollToProjects} className="btn btn-primary">
             View my work <span className="arrow">↓</span>
-          </a>
+          </button>
         </motion.div>
       </div>
+
+      {/* Projects section to scroll to */}
+      <section ref={projectsRef} id="projects">
+        <h2>My Projects</h2>
+        {/* Your projects content here */}
+      </section>
     </section>
   );
 };
