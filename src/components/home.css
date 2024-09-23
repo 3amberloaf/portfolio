@@ -7,6 +7,12 @@ html, body {
   overflow: hidden;
 }
 
+.home-container {
+  margin: 0;
+  padding: 0;
+}
+
+
 canvas {
   display: block;
   width: 100%;
@@ -20,23 +26,28 @@ canvas {
   left: 0;
   width: 100%;
   height: 100vh;
-  z-index: 2; /* Canvas is above the button */
+  z-index: 3; /* Canvas is above the button */
   pointer-events: none; /* Ensure it doesn't block button interactions */
 }
 
-/* Styling for the button */
+
+
+
 .home-container {
   position: relative;
-  z-index: 1; /* Button is under the ParticleSlider */
-}
-
-.btn {
-  position: relative;
-  z-index: 3; /* Ensure the button is interactable */
-  pointer-events: auto; /* Allow interaction on the button */
+  z-index: 2; /* Ensure the button container is above the canvas */
 }
 
 .btn-primary {
-  z-index: 3; /* Keep button interactable */
+  background-color: #557373; /* Muted teal */
+  color: white; /* White text */
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 5px;
+  z-index: 1; /* Ensure the button is on top of the canvas */
+  position: relative;
+
 }
+
+
 

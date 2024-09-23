@@ -3,8 +3,6 @@ import { motion } from "framer-motion";
 import './home.css'; // Your custom CSS
 import PixelEffect from "./pixel";
 
-
-
 const Home = () => {
   const buttonVariants = {
     hidden: { opacity: 0, scale: 0.8 },
@@ -17,24 +15,17 @@ const Home = () => {
 
   return (
     <section className="home-section" id="home">
-      {/* Particle Slider background */}
- <PixelEffect>
-
-      {/* Text animations using Framer Motion */}
+      {/* Pixel Effect in its own container */}
+      <PixelEffect />
+  
+      {/* Button and other elements */}
       <div className="home-container">
-        <motion.div
-          className="cta-buttons"
-          variants={buttonVariants}
-          initial="hidden"
-          animate="visible"
-        >
+        <motion.div className="cta-buttons" variants={buttonVariants} initial="hidden" animate="visible">
           <a href="#projects" className="btn btn-primary">
             View my work <span className="arrow">↓</span>
           </a>
         </motion.div>
-
       </div>
-      </PixelEffect>
     </section>
   );
 };

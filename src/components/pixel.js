@@ -3,14 +3,16 @@ import './pixel.css'; // Import the CSS file for enhanced styling
 
 const PixelEffect = () => {
   const canvasRef = useRef(null);
-  const name = "Amber"; // Your name
-  const fontSize = 120; // Font size for the text
+  const name = "Hi! I'm Amber"; // Your name
+  const fontSize = 60; // Font size for the text
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
+    // Adding willReadFrequently attribute for performance optimization
+    const ctx = canvas.getContext('2d', { willReadFrequently: true });
     const width = window.innerWidth;
     const height = window.innerHeight;
+
     canvas.width = width;
     canvas.height = height;
 
@@ -22,7 +24,7 @@ const PixelEffect = () => {
     // Draw the text on the canvas and retrieve its pixel data
     const drawText = () => {
       ctx.clearRect(0, 0, width, height); // Clear canvas
-      ctx.font = `${fontSize}px Arial`;
+      ctx.font = `${fontSize}px Montserrant`;
       ctx.fillStyle = 'white'; // Change the text color to white for better visibility
       ctx.textAlign = 'center';
       ctx.fillText(name, width / 2, height / 2);
