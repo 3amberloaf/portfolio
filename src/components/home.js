@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import './home.css'; // Your custom CSS
 import PixelEffect from "./pixel";
+import Confetti from 'react-confetti';
+
 
 const Home = () => {
   const buttonVariants = {
@@ -13,11 +15,18 @@ const Home = () => {
     },
   };
 
+  const ConfettiBackground = () => {
+    return <Confetti width={window.innerWidth} height={window.innerHeight} />;
+  };
+
   return (
     <section className="home-section" id="home">
+      {/* Confetti Background */}
+      <ConfettiBackground />
+    
       {/* Pixel Effect in its own container */}
       <PixelEffect />
-  
+    
       {/* Button and other elements */}
       <div className="home-container">
         <motion.div className="cta-buttons" variants={buttonVariants} initial="hidden" animate="visible">
