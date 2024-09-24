@@ -24,9 +24,7 @@ const Home = () => {
         </div>
 
         <div className="heading">
-          <div className="heading__line-1">
-            Hi, I'm <span className="highlight">Amber</span>.
-          </div>
+          
           <div className="heading__line-2">I am CS graduate student at NJIT</div>
           <a href="#projects" className="custom-button">
             View my work <span>&#x2193;</span>
@@ -52,8 +50,7 @@ const Home = () => {
       < Contact />
       </section>
 
-      {/* Footer */}
-      <footer className="footer"></footer>
+      
     </div>
   );
 };

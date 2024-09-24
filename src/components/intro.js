@@ -3,8 +3,8 @@ import './intro.css'; // Import the CSS file for enhanced styling
 
 const PixelEffect = () => {
   const canvasRef = useRef(null);
-  const name = "Welcome"; // Your name
-  const fontSize = 100; // Font size for the text
+  const name = "Hi, I'm Amber"; // Your name
+  const fontSize = 80; // Font size for the text
 
   useEffect(() => {
     const canvas = canvasRef.current;

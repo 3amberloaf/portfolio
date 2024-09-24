@@ -100,14 +100,19 @@ html, body {
 }
 
 .nav-links {
-  display: flex;
   list-style: none;
+  display: flex;
+  gap: 40px;
   margin: 0;
   padding: 0;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;
 }
 
 .nav-links li {
   margin: 0 20px;
+  position: relative;
 }
 
 .nav-links a {
