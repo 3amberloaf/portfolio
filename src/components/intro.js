@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react';
-
 import './intro.css'; // Import the CSS file for enhanced styling
 
 const PixelEffect = () => {
@@ -9,7 +8,6 @@ const PixelEffect = () => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    // Adding willReadFrequently attribute for performance optimization
     const ctx = canvas.getContext('2d', { willReadFrequently: true });
     const width = window.innerWidth;
     const height = window.innerHeight;
@@ -22,13 +20,12 @@ const PixelEffect = () => {
     let mouseY = 0;
     const mouseRadius = 80; // Radius around the mouse to affect the pixels
 
-    // Draw the text on the canvas and retrieve its pixel data
     const drawText = () => {
       ctx.clearRect(0, 0, width, height); // Clear canvas
       ctx.font = `${fontSize}px Montserrat`;
       ctx.fillStyle = 'white'; // Change the text color to white for better visibility
       ctx.textAlign = 'center';
-      ctx.fillText(name, width / 2, height / 2);
+      ctx.fillText(name, width / 2, height / 2 - 150); // Move the "Welcome" text upwards
 
       const imageData = ctx.getImageData(0, 0, width, height);
       const data = imageData.data;
@@ -53,7 +50,6 @@ const PixelEffect = () => {
 
     const movePixels = () => {
       ctx.clearRect(0, 0, width, height); // Clear canvas
-      ctx.font = `${fontSize}px Montserrat`;
 
       pixels.forEach((pixel) => {
         const dx = pixel.x - mouseX;
@@ -105,14 +101,9 @@ const PixelEffect = () => {
     };
   }, []);
 
-  
-
   return (
     <div className="pixel-effect-container">
-      {/* The pixel canvas */}
       <canvas ref={canvasRef} className="pixel-canvas" />
-
-     
     </div>
   );
 };

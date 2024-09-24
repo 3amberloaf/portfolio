@@ -1,14 +1,12 @@
 .pixel-effect-container {
   position: relative;
-  width: 700px; /* Set the width to 80% of the screen (adjust as necessary) */
-  height: 700px; /* Set a specific height, adjust as needed */
-  margin: 0 auto; /* Center horizontally by adding auto margins */
+  width: 100%;
+  height: 100vh;
+  display: flex;
   justify-content: center;
   align-items: center;
-  display: flex; /* Use flexbox for vertical and horizontal centering */
+  flex-direction: column; /* Stack items vertically */
   overflow: hidden;
-
-
 }
 
 .pixel-canvas {
@@ -16,14 +14,44 @@
   top: 0;
   left: 0;
   z-index: 2;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* Ensure the canvas doesn't block button interaction */
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Ensure the canvas doesn't block interaction */
 }
-#tsparticles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: visible;
-  z-index: 1; /* Ensure the particles stay behind the text */
+
+/* Adjust the text styling to avoid overlap */
+.heading {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: white;
+  margin-top: 150px; /* Add space to push the content down */
+}
+
+.heading__line-1 {
+  font-size: 4rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.heading__line-2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #f2f2f2;
+  margin-top: 10px;
+}
+
+.custom-button {
+  display: inline-block;
+  padding: 15px 35px;
+  color: #ff4a56;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: 2px solid #ff4a56;
+  border-radius: 8px;
+  margin-top: 25px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

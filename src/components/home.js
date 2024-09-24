@@ -36,19 +36,19 @@ const Home = () => {
 
       {/* About Section */}
       <section className="about" id="about">
-        <h1>About</h1>
+
         < About />
       </section>
 
       {/* Projects Section */}
       <section className="projects" id="projects">
-        <h1>Projects</h1>
+     
         <Projects />
       </section>
 
       {/* Contact Section */}
       <section className="contact" id="contact">
-        <h1>Contact</h1>
+
       < Contact />
       </section>
 
