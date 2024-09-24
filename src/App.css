@@ -3,6 +3,13 @@
   font-family: 'Montserrant';
 }
 
+@font-face {
+  font-family: 'Proximo Nova';
+  src: url('./fonts/Proxima-Nova-Extra-Condensed/Demo_Fonts/Fontspring-DEMO-proximanova-light.otf') format('truetype'); /* Adjust the path and format as needed */
+  font-weight: normal;
+  font-style: normal;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
