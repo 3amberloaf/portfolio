@@ -1,22 +1,23 @@
-// src/components/About.js
 import React from 'react';
 import './about.css';
+import skillsImage from './star.jpg';  // Update with the correct path to your uploaded image
 
 const About = () => {
   return (
-    <div className="about">
-      <h1>About Me</h1>
-      <p>
-        I'm Amber, a software developer with a Master's in Computer Science. My expertise includes front-end development using React.js and backend technologies like Node.js and AWS.
-      </p>
-      <h2>Skills</h2>
-      <ul>
-        <li>JavaScript (React, Node.js)</li>
-        <li>Python</li>
-        <li>Data Science and Machine Learning</li>
-        <li>AWS, Docker, Git</li>
-        <li>SQL and NoSQL Databases</li>
-      </ul>
+    <div className="about-section">
+      <h1 className="about-title">About Me</h1>
+      <div className="about-content">
+        <div className="about-description">
+          <p>
+            I'm Amber, a software developer with a Master's in Computer Science. My expertise includes front-end development using React.js and backend technologies like Node.js and AWS.
+          </p>
+          <h2 className="skills-title">Skills</h2>
+        </div>
+        
+        <div className="skills-image-container">
+          <img src={skillsImage} alt="Skills Overview" className="skills-image" />
+        </div>
+      </div>
     </div>
   );
 };
