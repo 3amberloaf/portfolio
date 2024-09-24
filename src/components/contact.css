@@ -1,52 +1,98 @@
-/* src/components/Contact.css */
+/* Contact Section */
 .contact {
-    padding: 50px;
-    background-color: #fff;
-    text-align: center;
-  }
-  
-  .contact h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .contact p {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 40px;
-  }
-  
-  .contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    padding: 15px;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .contact-form button {
-    padding: 15px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .contact-form button:hover {
-    background-color: #0056b3;
-  }
-  
+  padding: 50px;
+  background-color: #0d0d0d; /* Dark background to match the design */
+  text-align: center;
+  color: white;
+}
+
+/* Contact Header */
+.contact h1 {
+  font-size: 3rem; /* Larger for emphasis */
+  margin-bottom: 20px;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+}
+
+.contact h1::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 100px;
+  height: 5px;
+  background-color: #ff4a56; /* Red underline */
+}
+
+/* Contact Subheading */
+.contact p {
+  font-size: 1.2rem;
+  color: #cccccc; /* Light gray for subheading text */
+  margin-bottom: 40px;
+  line-height: 1.5;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Form Styles */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 15px;
+  font-size: 1rem;
+  border: 1px solid #333; /* Dark border for contrast */
+  background-color: #222; /* Dark background */
+  color: #fff; /* Light text */
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #777; /* Lighter color for placeholders */
+}
+
+/* Submit Button */
+.contact-form button {
+  background: none; /* Transparent background */
+  border: none; /* Remove default button border */
+  color: #fff; /* White text */
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.contact-form button::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 80px;
+  height: 2px;
+  background-color: #ff4a56; /* Red underline */
+  transition: width 0.3s ease;
+}
+
+.contact-form button:hover::after {
+  width: 100px; /* Expand underline on hover */
+}
+
+.contact-form button:hover {
+  color: #ff4a56; /* Change text color on hover */
+}
