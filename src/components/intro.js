@@ -4,7 +4,7 @@ import './intro.css'; // Import the CSS file for enhanced styling
 const PixelEffect = () => {
   const canvasRef = useRef(null);
   const name = "Hi, I'm AMBER"; // Your name
-  const fontSize = 80; // Font size for the text
+  const fontSize = 70; // Font size for the text
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -18,12 +18,12 @@ const PixelEffect = () => {
     const pixels = [];
     let mouseX = 0;
     let mouseY = 0;
-    const mouseRadius = 80; // Radius around the mouse to affect the pixels
+    const mouseRadius = 50; // Radius around the mouse to affect the pixels
 
     const drawText = () => {
       ctx.clearRect(0, 0, width, height); // Clear canvas
       ctx.font = `${fontSize}px Monalisa`;
-      ctx.fillStyle = 'white'; // Change the text color to white for better visibility
+      ctx.fillStyle = 'pink'; // Change the text color to white for better visibility
       ctx.textAlign = 'center';
       ctx.fillText(name, width / 2, height / 2 - 150); // Move the "Welcome" text upwards
 

@@ -61,7 +61,7 @@ html, body {
 .custom-button {
   display: inline-block;
   padding: 15px 35px;
-  color: #ff4a56; /* Button text color */
+  color: #ff4a56;
   text-decoration: none;
   font-size: 1.3rem;
   font-weight: bold;
@@ -152,14 +152,6 @@ h1 {
   padding-top: 60px; /* Better spacing for large screens */
 }
 
-footer {
-  background-color: #333;
-  color: white;
-  padding: 40px 20px;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 400;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
