@@ -1,6 +1,6 @@
 import React from 'react';
 import './about.css';
-import skillsImage from './star.jpg';  // Update with the correct path to your uploaded image
+import AmberSautner from '../assets/images/AmberSautner.jpg';
 
 const About = () => {
   return (
@@ -8,15 +8,16 @@ const About = () => {
       <h1 className="about-title">About Me</h1>
       <div className="about-content">
         <div className="about-description">
+        <div className="skills-image-container">
+          <img src={AmberSautner} alt="Skills Overview" className="skills-image" />
+        </div>
           <p>
-            I'm Amber, a software developer with a Master's in Computer Science. My expertise includes front-end development using React.js and backend technologies like Node.js and AWS.
+          I am Amber, a Masters graduate in Computer Science with a passion for both frontend and backend development. I have hands on experience building responsive websites, such as the Restart Drip website, and full stack applications like an Incident Management System that utilizes Spring Boot and React.js. I am skilled in Python, JavaScript, SQL, and AWS, and I'm constantly expanding my knowledge in data science and software engineering. With a strong technical background, a focus on user experience, and a drive for innovation, I am excited to apply my expertise to dynamic and challenging projects.
           </p>
-          <h2 className="skills-title">Skills</h2>
+          
         </div>
         
-        <div className="skills-image-container">
-          <img src={skillsImage} alt="Skills Overview" className="skills-image" />
-        </div>
+        
       </div>
     </div>
   );

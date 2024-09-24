@@ -7,7 +7,7 @@ const Contact = () => {
     <div className="contact">
       <h1>Contact Me</h1>
       <p>
-        I'd love to hear from you! Whether you have a question about my projects or want to work together, feel free to reach out.
+        I would love to hear from you. Whether you have a question about my projects or want to work together, feel free to reach out.
       </p>
       <form className="contact-form">
         <input type="text" placeholder="Your Name" required />
