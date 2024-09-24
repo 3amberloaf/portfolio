@@ -3,7 +3,7 @@ import './intro.css'; // Import the CSS file for enhanced styling
 
 const PixelEffect = () => {
   const canvasRef = useRef(null);
-  const name = "Hi, I'm Amber"; // Your name
+  const name = "Hi, I'm AMBER"; // Your name
   const fontSize = 80; // Font size for the text
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const PixelEffect = () => {
 
     const drawText = () => {
       ctx.clearRect(0, 0, width, height); // Clear canvas
-      ctx.font = `${fontSize}px Montserrat`;
+      ctx.font = `${fontSize}px Monalisa`;
       ctx.fillStyle = 'white'; // Change the text color to white for better visibility
       ctx.textAlign = 'center';
       ctx.fillText(name, width / 2, height / 2 - 150); // Move the "Welcome" text upwards

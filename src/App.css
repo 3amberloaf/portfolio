@@ -1,14 +1,22 @@
 .App {
   text-align: center;
-  font-family: 'Montserrant';
+
 }
 
 @font-face {
-  font-family: 'Proximo Nova';
-  src: url('./fonts/Proxima-Nova-Extra-Condensed/Demo_Fonts/Fontspring-DEMO-proximanova-light.otf') format('truetype'); /* Adjust the path and format as needed */
+  font-family: 'Proximo';
+  src: url('./fonts/Proxima-Nova-Extra-Condensed/Demo_Fonts/Fontspring-DEMO-proximanova-light.otf') format('opentype'); /* Adjust the path and format as needed */
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Monalisa';
+  src: url('./fonts/Monalisa Serif Font/monalisa-serif.otf') format('opentype'); /* Use .otf file and correct format */
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 .App-logo {
   height: 40vmin;
