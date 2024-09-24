@@ -1,10 +1,11 @@
 import React, { useRef, useEffect } from 'react';
-import './pixel.css'; // Import the CSS file for enhanced styling
+
+import './intro.css'; // Import the CSS file for enhanced styling
 
 const PixelEffect = () => {
   const canvasRef = useRef(null);
-  const name = "Hi! I'm Amber"; // Your name
-  const fontSize = 60; // Font size for the text
+  const name = "Welcome"; // Your name
+  const fontSize = 100; // Font size for the text
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -19,12 +20,12 @@ const PixelEffect = () => {
     const pixels = [];
     let mouseX = 0;
     let mouseY = 0;
-    const mouseRadius = 100; // Radius around the mouse to affect the pixels
+    const mouseRadius = 80; // Radius around the mouse to affect the pixels
 
     // Draw the text on the canvas and retrieve its pixel data
     const drawText = () => {
       ctx.clearRect(0, 0, width, height); // Clear canvas
-      ctx.font = `${fontSize}px Montserrant`;
+      ctx.font = `${fontSize}px Montserrat`;
       ctx.fillStyle = 'white'; // Change the text color to white for better visibility
       ctx.textAlign = 'center';
       ctx.fillText(name, width / 2, height / 2);
@@ -52,7 +53,7 @@ const PixelEffect = () => {
 
     const movePixels = () => {
       ctx.clearRect(0, 0, width, height); // Clear canvas
-      ctx.font = `${fontSize}px Montserrant`;
+      ctx.font = `${fontSize}px Montserrat`;
 
       pixels.forEach((pixel) => {
         const dx = pixel.x - mouseX;
@@ -104,11 +105,14 @@ const PixelEffect = () => {
     };
   }, []);
 
+  
+
   return (
     <div className="pixel-effect-container">
       {/* The pixel canvas */}
       <canvas ref={canvasRef} className="pixel-canvas" />
 
+     
     </div>
   );
 };
