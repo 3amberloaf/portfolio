@@ -2,7 +2,7 @@ import React from "react";
 import './home.css';
 import PixelEffect from "./intro";
 import Projects from "./projects";
-import ParticlesEffect from "./particles";
+
 
 const Home = () => {
   return (
@@ -18,7 +18,7 @@ const Home = () => {
 
       <div className="hero" id="hero">
         <div className="canvas">
-          <ParticlesEffect />  {/* Use the new ParticleEffect component */}
+
           <PixelEffect />
         </div>
 

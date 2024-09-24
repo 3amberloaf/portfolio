@@ -83,16 +83,19 @@ html, body {
 
 /* Navigation Bar */
 .navigation-bar {
-  position: fixed;
+  position: fixed; /* Keep the navigation bar fixed to the top */
   top: 0;
+  left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Slight transparency */
+  background-color: #333; /* Dark background similar to the image */
   display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  z-index: 3;
+  justify-content: center; /* Center the navigation links */
+  padding: 20px 0; /* Adjust padding for a clean look */
+  z-index: 1000; /* Ensure it stays on top of other content */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Adds a shadow effect like in the image */
 }
 
+/* Navigation Links */
 .nav-links {
   display: flex;
   list-style: none;
@@ -101,20 +104,33 @@ html, body {
 }
 
 .nav-links li {
-  margin: 0 15px;
+  margin: 0 15px; /* Space between links */
 }
 
 .nav-links a {
-  color: #ffffff;
+  color: white;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: #ff4a56;
+/* Active/Highlighted link */
+.nav-links a.active {
+  color: #ff4a56; /* Highlighted red for active link */
 }
+
+/* Hover effect for the links */
+.nav-links a:hover {
+  color: #ff4a56; /* Same red color on hover */
+}
+
+/* Adjust content below the header */
+body {
+  padding-top: 80px; /* Adjust this based on the height of your navigation bar */
+}
+
 
 /* Sections */
 .about, .projects, .contact {
