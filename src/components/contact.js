@@ -7,7 +7,7 @@ const Contact = () => {
     <div className="contact">
       <h1>Contact Me</h1>
       <p>
-        I would love to hear from you. Whether you have a question about my projects or want to work together, feel free to reach out.
+      I look forward to connecting with you! Based in central New Jersey, the best way to reach me is via email at ambersautner3@gmail.com. Whether you have questions about my projects or are interested in collaborating, I wouldd be happy to hear from you.
       </p>
       <form className="contact-form">
         <input type="text" placeholder="Your Name" required />
