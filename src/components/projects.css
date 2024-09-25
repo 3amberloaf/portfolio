@@ -16,7 +16,6 @@
 /* Project Header */
 .projects-section h1 {
   font-size: 3rem;
-  text-transform: uppercase;
   position: relative;
   margin-bottom: 30px;
   text-align: center;
@@ -87,13 +86,15 @@
   color: white;
   font-weight: 600;
   letter-spacing: 1px;
+  font-family: 'Monalisa';
 }
 
 .project-info-container p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: 1.2rem;
   line-height: 1.6;
   color: #ccc;
+  font-family: 'Proximo';
 }
 
 /* Buttons for project demo and repo */
@@ -104,7 +105,7 @@
 
 .project-links .btn {
   padding: 12px 25px;
-border: 2px solid #ffa600b3; /* matching border */
+  border: 2px solid #ffa600b3; /* matching border */
   color: white;
   background-color: transparent;
   text-transform: uppercase;

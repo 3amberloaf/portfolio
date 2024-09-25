@@ -5,7 +5,7 @@ import AmberSautner from '../assets/images/AmberSautner.jpg';
 const About = () => {
   return (
     <div className="about-section">
-      <h1 className="about-title">About Me</h1>
+      <h1 className="title">About Me</h1>
       <div className="about-content">
         <div className="about-description">
         <div className="skills-image-container">

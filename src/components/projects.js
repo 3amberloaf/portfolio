@@ -50,6 +50,7 @@ const Projects = () => {
 
   return (
     <div className="projects-section">
+      <h1 className="title">Projects</h1>
       <div className="project-container">
         {/* left side: project image */}
         <div className="project-image-container">

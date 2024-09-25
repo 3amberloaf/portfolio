@@ -16,7 +16,7 @@ const ConnectingDotsCanvas = () => {
 
     // array to store the dots and configuration variables
     const dots = [];
-    const numDots = 150; // number of dots
+    const numDots = 10; // number of dots
     const dotDistance = 80; // maximum distance between dots to connect with lines
 
     // dot class to create individual dots with random velocity

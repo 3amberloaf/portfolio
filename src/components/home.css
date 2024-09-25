@@ -71,6 +71,7 @@ html, body {
   border-radius: 8px;
   margin-top: 25px;
   transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Proximo';
 }
 
 .custom-button span {
@@ -132,19 +133,16 @@ html, body {
   color: #00aaff; /* bright blue on hover or active state */
 }
 
-/* section styles */
 section {
-  padding: 100px 20px;
-  text-align: center;
-  background-color: #02192f; /* dark blue background color */ /* consistent dark blue background */
-  color: #cceeff; /* softer blue for text */
+  padding: 50px 20px; /* reduce the padding to 50px */
   margin: 0 auto;
   max-width: 1200px;
 }
 
 .about, .projects, .contact {
-  margin-top: 6rem; /* ensure some breathing space between sections */
+  margin-top: 3rem; /* reduce the margin to 3rem */
 }
+
 
 h1 {
   font-size: 2.5rem;
