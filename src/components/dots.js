@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import './home.css'; // import the css styles for the component
+import './home.css'; 
 
 const ConnectingDotsCanvas = () => {
   // useRef is used to store a reference to the <canvas> element across renders

@@ -1,31 +1,31 @@
 import React, { useState } from "react";
-import './projects.css'; // custom styles for the projects component
+import './projects.css'; 
 
 // define an array of project objects, each containing details about the project
 const projects = [
   {
-    title: "Restart Drip Website", // project title
-    description: "A fully responsive website built for Restart Drip, a hydration and IV drip service provider.", // project description
-    tools: "HTML5, CSS3, Javascript, React.js", // technologies used in the project
-    image: "././images/restartdrip.png", // placeholder path to the project image
-    liveDemo: "https://www.restartdrip.com", // live demo link to the deployed website
-    repo: "Private Repository", // repository status, this one is private
+    title: "Restart Drip Website", 
+    description: "A fully responsive website built for Restart Drip, a hydration and IV drip service provider.", 
+    tools: "HTML5, CSS3, Javascript, React.js", 
+    image: "././images/restartdrip.png", 
+    liveDemo: "https://www.restartdrip.com", 
+    repo: "Private Repository", 
   },
   {
     title: "Incident Management System",
     description: "A full stack web application for tracking IT incidents.",
     tools: "Spring Boot, React.js, MySQL",
-    image: "././images/incident.png", // placeholder path to the project image
-    liveDemo: "#", // placeholder for the live demo link, to be updated later
-    repo: "https://github.com/3amberloaf/incident-management-system", // public repository link
+    image: "././images/incident.png", 
+    liveDemo: "#", 
+    repo: "https://github.com/3amberloaf/incident-management-systems", 
   },
   {
     title: "Pandas Data Analysis Project",
     description: "Data analysis techniques using Pandas for data manipulation and visualization.",
     tools: "Python, Pandas, Matplotlib",
-    image: "././images/pandas.jpg", // placeholder path to the project image
-    liveDemo: "#", // placeholder for the live demo link, to be updated later
-    repo: "https://github.com/3amberloaf/Pandas.git", // public repository link
+    image: "././images/pandas.jpg", 
+    liveDemo: "#", 
+    repo: "https://github.com/3amberloaf/Pandas.git", 
   },
 ];
 
@@ -53,37 +53,26 @@ const Projects = () => {
       <div className="project-container">
         {/* left side: project image */}
         <div className="project-image-container">
-          {/* display the image of the current project */}
           <img src={currentProject.image} alt={currentProject.title} className="project-image" />
         </div>
 
         {/* right side: project info */}
         <div className="project-info-container">
-          {/* project title */}
           <h2>{currentProject.title}</h2>
-
-          {/* project description */}
           <p>{currentProject.description}</p>
-
-          {/* tools used in the project */}
           <p><strong>Tools:</strong> {currentProject.tools}</p>
-
-          {/* project links for live demo and repository */}
           <div className="project-links">
-            {/* display live demo link if it exists */}
             {currentProject.liveDemo !== "#" && (
               <a href={currentProject.liveDemo} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                 Live Demo
               </a>
             )}
-            {/* display repository link if it is not private */}
             {currentProject.repo !== "Private Repository" && (
               <a href={currentProject.repo} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
                 View Repository
               </a>
             )}
           </div>
-
           {/* navigation buttons for switching between projects */}
           <div className="slider-controls">
             <button onClick={prevProject} className="btn btn-prev">Previous</button>
