@@ -47,13 +47,7 @@ html, body {
   padding: 20px;
 }
 
-.heading__line-2 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: #cceeff; /* softer blue for subheading */
-  margin-top: 10px;
-  font-family: 'Proximo';
-}
+
 
 .highlight {
   color: #00aaff; /* blue highlight for the name */
@@ -101,7 +95,7 @@ html, body {
   z-index: 1000;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   transition: background-color 0.3s ease;
-  font-family: 'Proximo';
+  font-family: 'Montserrant';
 }
 
 .nav-links {
@@ -110,9 +104,9 @@ html, body {
   gap: 30px;
   margin: 0;
   padding: 0;
-  font-size: 15px;
+  font-size: 25px;
   text-transform: capitalize;
-  font-family: 'Proximo';
+
 }
 
 .nav-links li {
@@ -123,7 +117,7 @@ html, body {
 .nav-links a {
   color: #cceeff; /* soft blue for nav links */
   text-decoration: none;
-  font-size: .8rem;
+  font-size: 1.2rem;
   font-family: 'Proximo', sans-serif;
   font-weight: bold;
   transition: color 0.3s ease;
