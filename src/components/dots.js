@@ -16,8 +16,8 @@ const ConnectingDotsCanvas = () => {
 
     // array to store the dots and configuration variables
     const dots = [];
-    const numDots = 100; // number of dots
-    const dotDistance = 150; // maximum distance between dots to connect with lines
+    const numDots = 80; // number of dots
+    const dotDistance = 100; // maximum distance between dots to connect with lines
 
     // dot class to create individual dots with random velocity
     class Dot {
@@ -35,18 +35,16 @@ const ConnectingDotsCanvas = () => {
       update() {
         this.x += this.vx;
         this.y += this.vy;
-
-        // check if the dot hits the canvas boundaries and reverse velocity
+        
+        // Reverse velocity when hitting canvas boundaries and adjust position to prevent overshooting
         if (this.x >= width || this.x <= 0) {
           this.vx = -this.vx;
-          // make sure the dot doesn't get stuck outside the canvas
-          this.x = Math.max(0, Math.min(this.x, width));
+          this.x = Math.max(0, Math.min(this.x, width)); // Ensure it stays within bounds
         }
         
         if (this.y >= height || this.y <= 0) {
           this.vy = -this.vy;
-          // keep the dot within the vertical bounds of the canvas
-          this.y = Math.max(0, Math.min(this.y, height));
+          this.y = Math.max(0, Math.min(this.y, height)); // Ensure it stays within bounds
         }
       }
 
@@ -54,8 +52,10 @@ const ConnectingDotsCanvas = () => {
       draw() {
         ctx.beginPath(); // start drawing path
         ctx.arc(this.x, this.y, 3, 0, Math.PI * 2); // draw a small circle for the dot
-        ctx.fillStyle = '#ffffff'; // white color for the dot
-        ctx.fill(); // fill the circle with the color
+        ctx.fillStyle = '#00aaff'; // blue color for the dots
+        ctx.shadowColor = '#00aaff'; // same color for the glow
+        ctx.shadowBlur = 1; // glow effect
+        ctx.fill();
       }
     }
 
@@ -74,12 +74,14 @@ const ConnectingDotsCanvas = () => {
 
           // if the distance is less than the threshold, draw a line between them
           if (distance < dotDistance) {
-            ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)'; // white line with some transparency
-            ctx.lineWidth = 1; // thin line
-            ctx.beginPath(); // start drawing path
-            ctx.moveTo(dots[i].x, dots[i].y); // move to the first dot
-            ctx.lineTo(dots[j].x, dots[j].y); // draw a line to the second dot
-            ctx.stroke(); // apply the stroke (draw the line)
+            ctx.strokeStyle = 'rgba(0, 170, 255, 0.5)'; // light blue color for the lines
+            ctx.lineWidth = 1;
+            ctx.shadowColor = '#00aaff'; // glow effect for the lines
+            ctx.shadowBlur = 10;
+            ctx.beginPath();
+            ctx.moveTo(dots[i].x, dots[i].y);
+            ctx.lineTo(dots[j].x, dots[j].y);
+            ctx.stroke();
           }
         }
       }
@@ -88,6 +90,7 @@ const ConnectingDotsCanvas = () => {
     // animation loop to update positions and redraw the dots and lines continuously
     const animate = () => {
       // clear the canvas for the next frame
+      
       ctx.clearRect(0, 0, width, height);
 
       // update the position of each dot and draw it
