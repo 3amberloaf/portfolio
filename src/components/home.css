@@ -10,6 +10,17 @@ html, body {
   font-family: 'Proximo';
 }
 
+/* Connecting dots canvas - position it behind everything */
+.connecting-dots {
+  position: absolute; /* Make sure it's absolutely positioned */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Set z-index to -1 to place it behind other elements */
+  pointer-events: none; /* Ensure canvas doesn't capture mouse events */
+}
+
 /* Hero Section */
 .hero {
   position: relative;
@@ -18,8 +29,8 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0d0d0d;
   overflow: hidden;
+  z-index: 1; /* Ensure other elements stay on top */
 }
 
 .canvas {
@@ -28,16 +39,19 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 2; /* Slightly higher than the connecting dots */
 }
 
 .heading {
   position: relative;
-  z-index: 2;
+  z-index: 3; /* Highest z-index to ensure it's on top of the canvas and pixel effect */
   text-align: center;
   color: white;
   padding: 20px;
 }
+
+
+
 
 .heading__line-1 {
   font-size: 4rem;
@@ -200,3 +214,4 @@ body {
 .navigation-bar.scrolled {
   background-color: #222; /* Darker background on scroll */
 }
+

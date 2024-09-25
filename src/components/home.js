@@ -20,7 +20,8 @@ const Home = () => {
 
       {/* Hero Section */}
       <div className="hero" id="hero">
-        < ConnectingDotsCanvas />
+        
+      < ConnectingDotsCanvas />
         <div className="canvas">
           <PixelEffect />
         </div>

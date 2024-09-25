@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import './home.css'; // Import your CSS
 
 const ConnectingDotsCanvas = () => {
   const canvasRef = useRef(null);
@@ -26,9 +27,19 @@ const ConnectingDotsCanvas = () => {
       update() {
         this.x += this.vx;
         this.y += this.vy;
-        if (this.x > width || this.x < 0) this.vx = -this.vx;
-        if (this.y > height || this.y < 0) this.vy = -this.vy;
+        
+        // Reverse velocity when hitting canvas boundaries and adjust position to prevent overshooting
+        if (this.x >= width || this.x <= 0) {
+          this.vx = -this.vx;
+          this.x = Math.max(0, Math.min(this.x, width)); // Ensure it stays within bounds
+        }
+        
+        if (this.y >= height || this.y <= 0) {
+          this.vy = -this.vy;
+          this.y = Math.max(0, Math.min(this.y, height)); // Ensure it stays within bounds
+        }
       }
+      
 
       draw() {
         ctx.beginPath();
@@ -76,19 +87,19 @@ const ConnectingDotsCanvas = () => {
     animate();
 
     // Resize canvas on window resize
-    const handleResize = () => {
+    const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
-    window.addEventListener('resize', handleResize);
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    resizeCanvas(); // Set the canvas size on initial load
+
+    // Set up event listener to resize canvas on window resize
+    window.addEventListener('resize', resizeCanvas);
   }, []);
 
   return (
-    <canvas className="connecting-dots" ref={canvasRef} style={{ display: 'block' }} />
+    <canvas className="connecting-dots" ref={canvasRef} style={{ display: 'block' } } />
   );
 };
 
