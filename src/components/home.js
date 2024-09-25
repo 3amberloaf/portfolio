@@ -4,6 +4,8 @@ import PixelEffect from "./intro";
 import Projects from "./projects";
 import About from "./about";
 import Contact from "./contact";
+import ConnectingDotsCanvas from "./dots";
+
 const Home = () => {
   return (
     <div>
@@ -18,6 +20,7 @@ const Home = () => {
 
       {/* Hero Section */}
       <div className="hero" id="hero">
+        < ConnectingDotsCanvas />
         <div className="canvas">
           <PixelEffect />
         </div>
