@@ -7,9 +7,10 @@
   width: 100%;
   padding: 50px 0;
   box-sizing: border-box;
-  background-color: #0d0d0d;
+  background-color: #02192f; /* dark blue background color */ /* dark blue background color */
   color: white;
   overflow-x: hidden;
+  font-family: 'Proximo';
 }
 
 /* Project Header */
@@ -20,6 +21,7 @@
   margin-bottom: 30px;
   text-align: center;
   letter-spacing: 2px;
+  font-family: 'Proximo';
 }
 
 .projects-section h1::after {
@@ -42,7 +44,7 @@
   width: 90%;
   margin-bottom: 3rem;
   padding: 2rem;
-  background: #1a1a1a;
+  background-color: #001f3f;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -102,7 +104,7 @@
 
 .project-links .btn {
   padding: 12px 25px;
-  border: 1px solid #ff4a56;
+border: 2px solid #ffa600b3; /* matching border */
   color: white;
   background-color: transparent;
   text-transform: uppercase;
@@ -113,9 +115,8 @@
 }
 
 .project-links .btn:hover {
-  background-color: #ff4a56;
-  color: #0d0d0d;
-  box-shadow: 0 0 10px rgba(255, 74, 86, 0.6);
+  background-color: #ff8c009e; /* darker orange on hover */
+  color: #ffffff; /* white text for more contrast */
   transform: translateY(-3px);
 }
 

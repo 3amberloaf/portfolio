@@ -1,5 +1,5 @@
 html, body {
-  background-color: #001f3f; /* dark blue background color */
+  background-color: #02192f; /* dark blue background color */
   width: 100%;
   height: 100%;
   margin: 0;
@@ -7,19 +7,18 @@ html, body {
   scroll-behavior: smooth;
 }
 
-
-/* Connecting dots canvas - position it behind everything */
+/* connecting dots canvas - position it behind everything */
 .connecting-dots {
-  position: absolute; /* Make sure it's absolutely positioned */
+  position: absolute; /* ensure it's absolutely positioned */
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1; /* Set z-index to -1 to place it behind other elements */
-  pointer-events: none; /* Ensure canvas doesn't capture mouse events */
+  z-index: -1; /* behind everything */
+  pointer-events: none; /* no mouse interaction */
 }
 
-/* Hero Section */
+/* hero section */
 .hero {
   position: relative;
   width: 100vw;
@@ -28,7 +27,7 @@ html, body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  z-index: 1; /* Ensure other elements stay on top */
+  z-index: 1; /* make sure other elements stay on top */
 }
 
 .canvas {
@@ -37,37 +36,38 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 2; /* Slightly higher than the connecting dots */
+  z-index: 2; /* slightly higher than the connecting dots */
 }
 
 .heading {
   position: relative;
-  z-index: 3; /* Highest z-index to ensure it's on top of the canvas and pixel effect */
+  z-index: 3; /* highest z-index to ensure it stays on top */
   text-align: center;
-  color: white;
+  color: #00aaff; /* light blue for heading */
   padding: 20px;
 }
 
 .heading__line-2 {
   font-size: 1.5rem;
   font-weight: 400;
-  color: #f2f2f2;
+  color: #cceeff; /* softer blue for subheading */
   margin-top: 10px;
   font-family: 'Proximo';
 }
 
 .highlight {
-  color: #ff4a56; /* Highlight color for the name */
+  color: #00aaff; /* blue highlight for the name */
 }
 
 .custom-button {
   display: inline-block;
   padding: 15px 35px;
-  color: #ff4a56;
+  color: #ffffff; /* dark blue text color for contrast */
+  background-color: transparent; /* dark blue background color */
   text-decoration: none;
   font-size: 1.3rem;
   font-weight: bold;
-  border: 2px solid #ff4a56;
+  border: 2px solid #ffa600b3; /* matching border */
   border-radius: 8px;
   margin-top: 25px;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -78,28 +78,30 @@ html, body {
 }
 
 .custom-button:hover {
-  background-color: #ff4a56;
-  color: #0d0d0d;
+  background-color: #ff8c009e; /* darker orange on hover */
+  color: #ffffff; /* white text for more contrast */
 }
 
 .custom-button:hover span {
-  transform: translateY(5px); /* Slight downward motion */
+  transform: translateY(5px); /* slight downward motion */
 }
 
-/* Navigation Bar */
+
+/* navigation bar */
 .navigation-bar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(51, 51, 51, 0.9); /* Transparent dark background */
+  background-color: rgba(0, 51, 102, 0.9); /* dark blue with slight transparency */
   display: flex;
   justify-content: left;
   padding: 10px 0px;
   z-index: 1000;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   transition: background-color 0.3s ease;
-  font-family: 'Proximo';}
+  font-family: 'Proximo';
+}
 
 .nav-links {
   list-style: none;
@@ -109,7 +111,8 @@ html, body {
   padding: 0;
   font-size: 15px;
   text-transform: capitalize;
-  font-family: 'Proximo';}
+  font-family: 'Proximo';
+}
 
 .nav-links li {
   margin: 0 20px;
@@ -117,7 +120,7 @@ html, body {
 }
 
 .nav-links a {
-  color: white;
+  color: #cceeff; /* soft blue for nav links */
   text-decoration: none;
   font-size: .8rem;
   font-family: 'Proximo', sans-serif;
@@ -126,36 +129,35 @@ html, body {
 }
 
 .nav-links a:hover, .nav-links a.active {
-  color: #ff4a56; /* Highlight on hover and active */
+  color: #00aaff; /* bright blue on hover or active state */
 }
 
-/* Section Styles */
+/* section styles */
 section {
   padding: 100px 20px;
   text-align: center;
-  background-color: #0d0d0d;
-  color: white;
+  background-color: #02192f; /* dark blue background color */ /* consistent dark blue background */
+  color: #cceeff; /* softer blue for text */
   margin: 0 auto;
   max-width: 1200px;
 }
 
 .about, .projects, .contact {
-  margin-top: 6rem; /* Ensure some breathing space between sections */
+  margin-top: 6rem; /* ensure some breathing space between sections */
 }
 
 h1 {
   font-size: 2.5rem;
   margin-bottom: 40px;
-  color: #f2f2f2;
+  color: #cceeff; /* softer blue for headings */
   font-weight: 600;
 }
 
 .projects {
-  padding-top: 60px; /* Better spacing for large screens */
+  padding-top: 60px; /* better spacing for large screens */
 }
 
-
-/* Responsive Design */
+/* responsive design */
 @media (max-width: 768px) {
   .heading__line-1 {
     font-size: 2.5rem;
@@ -194,12 +196,11 @@ h1 {
   }
 }
 
-/* Transitions and Effects */
+/* transitions and effects */
 body {
   transition: background-color 0.3s ease;
 }
 
 .navigation-bar.scrolled {
-  background-color: #222; /* Darker background on scroll */
+  background-color: #003366; /* darker blue on scroll */
 }
-
