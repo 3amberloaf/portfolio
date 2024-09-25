@@ -29,7 +29,7 @@ const PixelEffect = () => {
     const drawText = () => {
       pixels.length = 0; // clear pixel array to avoid overlapping or performance issues
       ctx.clearRect(0, 0, canvas.width, canvas.height); // clear the entire canvas
-      ctx.font = `${fontSize}px Monalisa`; // set font style and size dynamically
+      ctx.font = `${fontSize}px Monalisa`;
       ctx.fillStyle = 'white'; // text color for visibility
       ctx.textAlign = 'center'; // center the text horizontally
       ctx.fillText(name, canvas.width / 2, canvas.height / 2 - 150); // position the text slightly above center
