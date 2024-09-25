@@ -1,10 +1,11 @@
 import React, { useRef, useEffect } from 'react';
-import './intro.css'; 
+import './intro.css';
 
 const PixelEffect = () => {
   const canvasRef = useRef(null); // reference to the canvas element
+  const fontSizeRef = useRef(Math.min(window.innerWidth * 0.08, 80)); // reference to persist fontSize
   const name = "Hi, I'm AMBER"; // text to display on the canvas
-  let fontSize = Math.min(window.innerWidth * 0.08, 80); // font size based on window width, capped at 80px
+  const mouseRadiusRef = useRef(Math.max(50, window.innerWidth * 0.05)); // reference to persist mouse radius
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -12,7 +13,6 @@ const PixelEffect = () => {
     const pixels = []; // array to hold the pixel data
     let mouseX = 0; // store the current mouse X position
     let mouseY = 0; // store the current mouse Y position
-    let mouseRadius = Math.max(50, window.innerWidth * 0.05); // radius around the mouse for pixel interaction, dynamic based on screen size
 
     // function to update the canvas size based on window size
     const updateCanvasSize = () => {
@@ -20,8 +20,8 @@ const PixelEffect = () => {
       const height = window.innerHeight; // get current window height
       canvas.width = width; // set canvas width dynamically
       canvas.height = height; // set canvas height dynamically
-      fontSize = Math.min(window.innerWidth * 0.08, 80); // dynamically calculate the font size
-      mouseRadius = Math.max(50, window.innerWidth * 0.05); // update mouse radius on resize
+      fontSizeRef.current = Math.min(window.innerWidth * 0.08, 80); // dynamically calculate the font size and store it in ref
+      mouseRadiusRef.current = Math.max(50, window.innerWidth * 0.05); // update mouse radius on resize
       drawText(); // redraw the text when canvas is resized
     };
 
@@ -29,7 +29,7 @@ const PixelEffect = () => {
     const drawText = () => {
       pixels.length = 0; // clear pixel array to avoid overlapping or performance issues
       ctx.clearRect(0, 0, canvas.width, canvas.height); // clear the entire canvas
-      ctx.font = `${fontSize}px Monalisa`;
+      ctx.font = `${fontSizeRef.current}px Monalisa`;
       ctx.fillStyle = 'white'; // text color for visibility
       ctx.textAlign = 'center'; // center the text horizontally
       ctx.fillText(name, canvas.width / 2, canvas.height / 2 - 150); // position the text slightly above center
@@ -68,10 +68,10 @@ const PixelEffect = () => {
         const distance = Math.sqrt(dx * dx + dy * dy); // calculate the distance from the mouse
 
         // apply a force to pixels within the mouse radius
-        if (distance < mouseRadius) {
+        if (distance < mouseRadiusRef.current) {
           const forceDirectionX = dx / distance; // normalize the horizontal direction of the force
           const forceDirectionY = dy / distance; // normalize the vertical direction of the force
-          const force = (mouseRadius - distance) / mouseRadius; // calculate the strength of the force based on proximity
+          const force = (mouseRadiusRef.current - distance) / mouseRadiusRef.current; // calculate the strength of the force based on proximity
 
           const moveX = forceDirectionX * force * 5; // calculate how much to move horizontally
           const moveY = forceDirectionY * force * 5; // calculate how much to move vertically
