@@ -10,28 +10,21 @@
   background-color: #02192f; /* dark blue background color */ /* dark blue background color */
   color: white;
   overflow-x: hidden;
-  font-family: 'Proximo';
 }
+
+
 
 /* Project Header */
 .projects-section h1 {
-  font-size: 3rem;
-  position: relative;
-  margin-bottom: 30px;
-  text-align: center;
-  letter-spacing: 2px;
-  font-family: 'Proximo';
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    position: relative;
+  
 }
 
-.projects-section h1::after {
-  content: '';
-  width: 120px;
-  height: 8px;
-  background-color: #ff4a56;
-  display: block;
-  margin: 10px auto 0;
-  border-radius: 5px;
-}
+
 
 /* Project Container */
 .project-container {
