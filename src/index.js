@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.css'; // Your custom CSS
-import App from './App'; // The main React component that uses ParticleSlider
+import App from './App'; 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

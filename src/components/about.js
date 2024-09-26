@@ -12,7 +12,7 @@ const About = () => {
           <img src={AmberSautner} alt="Skills Overview" className="skills-image" />
         </div>
           <p>
-          I am Amber, a Masters graduate in Computer Science with a passion for both frontend and backend development. I have hands on experience building responsive websites, such as the Restart Drip website, and full stack applications like an Incident Management System that utilizes Spring Boot and React.js. I am skilled in Python, JavaScript, SQL, and AWS, and I'm constantly expanding my knowledge in data science and software engineering. With a strong technical background, a focus on user experience, and a drive for innovation, I am excited to apply my expertise to dynamic and challenging projects.
+          Hi there! I am Amber Sautner, a Masters graduate in Computer Science with a strong background in both frontend and backend development. I have had the chance to work on projects like the fully responsive Restart Drip website, as well as a full-stack Incident Management System built with Spring Boot and React.js. I am proficient in Python, JavaScript, SQL, and AWS, and enjoy continuously learning, especially in areas like data science and software engineering. My experience includes optimizing cloud infrastructure, improving website performance, and aligning technical projects with business goals. I am passionate about creating user-centered solutions and excited to contribute my skills to innovative and challenging projects.
           </p>
           
         </div>
