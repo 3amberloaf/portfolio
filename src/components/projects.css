@@ -25,7 +25,6 @@
 }
 
 
-
 /* Project Container */
 .project-container {
   display: flex;
@@ -34,6 +33,7 @@
   align-items: center;
   max-width: 1200px;
   width: 90%;
+  height: 500px;
   margin-bottom: 3rem;
   padding: 2rem;
   background-color: #001f3f;
