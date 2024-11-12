@@ -32,7 +32,6 @@ Welcome to my personal portfolio! This website showcases my skills, projects, an
 - **Project Management**: Agile, JIRA, Trello
 
 ---
-
 ## Projects
 
 ### 1. **Restart Drip Website**
